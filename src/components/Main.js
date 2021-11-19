@@ -70,7 +70,7 @@ const deleteProduct = async (id) => {
         <Route path="/" element={
         <Index product={product} createProduct={createProduct}/>
         } />
-        <Route path="/product/:id" element={
+        <Route path="/products/:id" element={
         <Show product={product} updateProduct={updateProduct} deleteProduct={deleteProduct}/>} 
         />Product
       </Routes>
