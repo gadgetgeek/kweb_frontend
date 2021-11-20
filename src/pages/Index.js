@@ -103,6 +103,7 @@ if (props.product) {
             <h4>Department: {products.department}</h4>
             <h4>aisle: {products.aisle}</h4>
             <h4>location: {products.location}</h4>
+            <a src="#"><button className="addcartbtn">Add to Cart</button></a>
             </div>
           </div>
         );
