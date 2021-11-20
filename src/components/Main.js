@@ -8,7 +8,7 @@ const Main = (props) => {
   const [product, setProduct] = useState(null);
 
   // your deployed heroku URL
-  const URL = "http://kweb-ga.herokuapp.com/products/";
+  const URL = "https://kweb-ga.herokuapp.com/products/";
 
   // function to get updated list of a product
   const getProduct = async () => {
