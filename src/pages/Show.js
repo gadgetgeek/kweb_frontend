@@ -40,7 +40,7 @@ const navigate = useNavigate()
         event.preventDefault()
         // pass the form data to updateProduct
         props.updateProduct(editForm, products._id)
-        // redirect cheese back to index
+        // redirect product back to index
         navigate("/")
     }
 
@@ -49,30 +49,46 @@ const navigate = useNavigate()
         navigate("/")
     }
     const form = (
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={editForm.name}
+          name="name"
+          placeholder="name"
+          onChange={handleChange}
+        />
+       
+        <input
+          type="text"
+          value={editForm.image}
+          name="image"
+          placeholder="Image URL"
+          onChange={handleChange}
+        />
           <input
-            type="text"
-            value={editForm.name}
-            name="name"
-            placeholder="name"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            value={editForm.image}
-            name="image"
-            placeholder="Image URL"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            value={editForm.countryOfOrigin}
-            name="countryOfOrigin"
-            placeholder="countryOfOrigin"
-            onChange={handleChange}
-          />
-          <input type="submit" value="Update Product" />
-        </form>
+          type="text"
+          value={editForm.price}
+          name="price"
+          placeholder="price"
+          onChange={handleChange}
+        />
+            <input
+          type="text"
+          value={editForm.department}
+          name="department"
+          placeholder="department"
+          onChange={handleChange}
+        />
+            <input
+          type="text"
+          value={editForm.aisle}
+          name="aisle"
+          placeholder="aisle"
+          onChange={handleChange}
+        />
+       
+        <input type="submit" value="Update Product" />
+      </form>
       );
 
 
@@ -80,8 +96,11 @@ const navigate = useNavigate()
       <div className="products">
         <div className="productcontent">
         <h1>{products.name}</h1>
-        <h2>{products.price}</h2>
         <img src={products.image} alt={products.name} />
+        <h2>{products.price}</h2>
+        <h4>Department: {products.department}</h4>
+        <h4>aisle: {products.aisle}</h4>
+        <h4>location: {products.location}</h4>
         </div>
         {form}
         <button onClick={removeProduct}>DELETE PRODUCT</button>
