@@ -1,0 +1,106 @@
+// ---------------------
+// Variables
+// ---------------------
+$maincolor: rgb(33, 207, 207);
+$contrastcolor: white;
+$alertcolor:red;
+
+// ---------------------
+// Mixins
+// ---------------------
+
+@mixin white-text-teal-bg {
+    color: $contrastcolor;
+    background-color: $maincolor;
+}
+
+@mixin teal-text-white-bg {
+    color: $maincolor;
+    background-color: $contrastcolor
+}
+
+@mixin white-text-red-bg{
+    color: $contrastcolor;
+    background-color: $alertcolor;
+}
+
+// ---------------------------------
+// Header
+// ---------------------------------
+
+nav {
+    @include white-text-teal-bg;
+    display: flex;
+    justify-content: flex-start;
+
+    a{
+        @include white-text-teal-bg;
+
+        div {
+            margin: 10px;
+            font-size: large
+        }
+    }
+}
+
+// --------------------------
+// Form
+// --------------------------
+
+section,
+div {
+  form {
+      margin-left: 10% ;
+
+
+    input {
+      @include white-text-teal-bg;
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 10px;
+      
+
+      &[type="submit"]:hover {
+        @include teal-text-white-bg;
+      }
+
+    }
+  }
+}
+
+// --------------------------
+// button
+// --------------------------
+
+button {
+  @include white-text-red-bg;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3em;
+  margin: 10px 0 0 465px;
+
+}
+
+// --------------------------
+// images
+// --------------------------
+
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 90px;
+  object-fit: cover;
+}
+
+section, 
+div.product{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+div.productcontent{
+    text-align: center;
+    margin: 10px;
+}
