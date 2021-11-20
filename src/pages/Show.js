@@ -18,7 +18,7 @@ const navigate = useNavigate()
           const products = product.find((p) => p._id === id);
           setEditForm(products)
       }
-  }, [props.product])
+  }, [props.product, product, id])
 
   if (props.product) {
     // grab the target product from the product array
