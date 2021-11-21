@@ -10,9 +10,7 @@ const Signup = (props) => {
         // make the post request to our API
         await fetch(URL+'/signup', {
             method: "post",
-            headers: {
-            "Content-Type": "application/json",
-            },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify(item),
         })
     }

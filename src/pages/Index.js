@@ -11,7 +11,6 @@ const Index = (props) => {
     aisle: "",
     image: "",
     location: ""
-      
   })
 
   //handleChange function to sync input with state 
@@ -39,7 +38,6 @@ const handleSubmit = (event) => {
     aisle: "",
     image: "",
     location: ""
-      
 })
 
 }
