@@ -19,6 +19,17 @@ const Main = (props) => {
       {id: user._id},
       {loggedIn: true}
     ]
+
+    const seedData = async () => {
+      // make the get request to our API
+      await fetch(URL+'/seed', {
+          method: "get",
+          headers: {"Content-Type": "application/json"},
+      })
+    }
+
+    seedData()
+    
     setAuth(token)
   }
 
