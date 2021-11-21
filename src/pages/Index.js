@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Index = (props) => {
@@ -11,7 +11,6 @@ const Index = (props) => {
     aisle: "",
     image: "",
     location: ""
-      
   })
 
   //handleChange function to sync input with state 
@@ -39,7 +38,6 @@ const handleSubmit = (event) => {
     aisle: "",
     image: "",
     location: ""
-      
 })
 
 }
