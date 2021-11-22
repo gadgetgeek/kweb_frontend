@@ -25,8 +25,7 @@ $green: #78975e;
   background-color: $alertcolor;
 }
 
-
-// breakpoints mixins for responsive mobile/ screen styling 
+// breakpoints mixins for responsive mobile/ screen styling
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == phone {
     @media only screen and (max-width: 37.5em) {
@@ -132,44 +131,42 @@ body {
     font-size: 2.8rem;
     color: #333;
     text-decoration: none;
-    font-weight:bold;
+    font-weight: bold;
   }
-  &__button{
-     display: none;
+  &__button {
+    display: none;
 
-     @include breakpoint(tablet-port) {
-       display: flex;
-       flex-direction: column;
-       justify-content: space-between;
-       align-items: center;
-       height: 65%;
-       margin: 17.5% 0;
-       width: 5rem;
-       cursor: pointer;
+    @include breakpoint(tablet-port) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 65%;
+      margin: 17.5% 0;
+      width: 5rem;
+      cursor: pointer;
 
-       &:hover {
-         height: 70%;
-         margin: 15% 0;
-       }
+      &:hover {
+        height: 70%;
+        margin: 15% 0;
+      }
 
-       &__component {
-         display: none;
+      &__component {
+        display: none;
 
-         @include breakpoint(tablet-port) {
-           display: block;
-           height: 0.3rem;
-           width: 100%;
-           background-color: #333;
-         }
-
-
+        @include breakpoint(tablet-port) {
+          display: block;
+          height: 0.3rem;
+          width: 100%;
+          background-color: #333;
         }
-     }
+      }
+    }
   }
 }
 
 // --------------------------
-// BurgerMenu
+// BurgerMenu / drop down
 // --------------------------
 
 .burgermenu {
@@ -183,28 +180,56 @@ body {
     z-index: 200;
     width: 70%;
     height: 100%;
-    transition: tranform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
     background-color: #ddd;
     padding: 4rem 2rem;
   }
+
   &--open {
-    transform: trasnlateX(0);
+    transform: translateX(0);
   }
 
   &--closed {
-    transform: translateX(-100%)
+    transform: translateX(-100%);
   }
 
   &__backdrop {
-    
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0.6;
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 2rem;
+    width: 100%;
+
+    &__item {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__logo {
+    font-size: 3.6rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 4rem;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #777;
+    color: #333;
   }
 }
-
-
-
-
-
-
 
 // --------------------------
 // Form

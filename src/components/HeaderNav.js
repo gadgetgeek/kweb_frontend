@@ -8,11 +8,11 @@ const HeaderNav =() =>{
     const [showBurgerMenu, setBurgerMenu] = useState(false);
 
     const closeBurgerMenu = () => {
-        setShowBurgerMenu(false);
+        setBurgerMenu(false);
     }
 
     const toggleBurgerMenu = ()=>{
-        setShowBurgerMenu(!showBurgerMenu);
+        setBurgerMenu(!showBurgerMenu);
     };
 
     return (

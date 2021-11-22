@@ -44,10 +44,10 @@ const Header = ({toggleBurgerMenu}) => {
             </NavLink>
           </li>
 
-          <div className="nav__toggle__button" onClick={toggleBurgerMenu}>
-            <div className="nav__toggle__button"></div>
-            <div className="nav__toggle__button"></div>
-            <div className="nav__toggle__button"></div>
+          <div className="nav__button" onClick={toggleBurgerMenu}>
+            <div className="nav__button__component"></div>
+            <div className="nav__button__component"></div>
+            <div className="nav__button__component"></div>
           </div>
         </ul>
       </nav>

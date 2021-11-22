@@ -1,10 +1,10 @@
-import Header from "./components/Header";
+import HeaderNav from "./components/HeaderNav";
 import Main from "./components/Main";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <HeaderNav />
       <Main />
     </div>
   );
