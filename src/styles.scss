@@ -4,6 +4,14 @@
 $maincolor: rgb(33, 207, 207);
 $contrastcolor: white;
 $alertcolor:red;
+$green: #78975E;
+
+//header height
+$headerHeight: 100px;
+
+//border radius
+$borderRadius: 12px;
+
 
 // ---------------------
 // Mixins
@@ -24,24 +32,88 @@ $alertcolor:red;
     background-color: $alertcolor;
 }
 
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+  
+}
+
+
 // ---------------------------------
 // Header
 // ---------------------------------
 
-nav {
-    @include white-text-teal-bg;
+// nav {
+//     @include white-text-teal-bg;
+//     width: 90%;
+//     height: 55px;
+//     border-bottom: 2px solid gray;
+//     padding: 0 20px;
+//     display: flex;
+//     justify-content: space-between;
+
+// .logo {
+//   padding: 18px 0;
+// }
+
+// ul{
+//   list-style: none;
+//   display: flex;
+//   flex-flow: row nowrap;
+// }
+// li{
+//   padding: 18px 10px;
+//   color: white;
+  
+// }
+
+// @media (max-width: 768px) {
+//   flex-flow: column nowrap;
+//   background-color: gray;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   height: 100vh;
+//   width: 300px;
+//   padding-top: 3.5rem;
+// }
+
+//     a{
+//         @include white-text-teal-bg;
+
+//         // div {
+//         //     margin: 10px;
+//         //     font-size: large
+//         // }
+//     }
+// }
+
+.header{
+  background: $green;
+  width: 100%;
+  height: $headerHeight;
+  padding: 0 1.5rem;
+  @include breakpoint(md){
+    padding: 0 3rem;
+  }
+  transition: 0.3s ease all;
+
+  & .content {
+    overflow: hidden;
+    color: $contrastcolor;
+    margin: 0 auto;
+    max-width: 1920px;
+    height: 100%;
     display: flex;
-    justify-content: flex-start;
-
-    a{
-        @include white-text-teal-bg;
-
-        div {
-            margin: 10px;
-            font-size: large
-        }
-    }
+    align-items: center;
+    justify-content: space-between;
+  }
 }
+
 
 // --------------------------
 // Form
