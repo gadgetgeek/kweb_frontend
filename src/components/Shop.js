@@ -33,6 +33,10 @@ const Shop = (props) => {
         setProduct(search);
     };
 
+    useEffect( () => {
+        if (product === null) {getProduct()}
+    }, [])
+
     const [cart, setCart] = useState(null)
     
     const getCart = async () => {

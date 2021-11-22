@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Signup from "../pages/Signup";
 import Login from "../pages/Login"
 import Shop from "../components/Shop"
 import Landing from "../pages/Landing"
-
 
 const Main = (props) => {
   // your deployed heroku URL
@@ -19,6 +17,17 @@ const Main = (props) => {
       {id: user._id},
       {loggedIn: true}
     ]
+
+    const seedData = async () => {
+      // make the get request to our API
+      await fetch(URL+'/seed', {
+          method: "get",
+          headers: {"Content-Type": "application/json"},
+      })
+    }
+
+    seedData()
+    
     setAuth(token)
   }
 
