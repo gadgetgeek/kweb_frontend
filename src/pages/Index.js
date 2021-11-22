@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Index = (props) => {
 
@@ -19,41 +19,40 @@ const Index = (props) => {
      setNewForm(newState)
  }
 
-
   // handleSubmit function for when form is submitted
   const handleSubmit = (event) => {
-  // prevent the page from refreshing
-  event.preventDefault()
-  // pass the form data to createPeople function
-  props.searchProduct(newForm)
-  // reset the form to empty
-  setNewForm({
-    department: "",
-    name: ""
-})
+    // prevent the page from refreshing
+    event.preventDefault()
+    // pass the form data to createPeople function
+    props.searchProduct(newForm)
+    // reset the form to empty
+    setNewForm({
+      department: "",
+      name: ""
+    })
+  }
 
-}
-const form = (
-  <form onSubmit={handleSubmit}>
-    <input
-      type="text"
-      value={newForm.department}
-      name="department"
-      placeholder="department"
-      onChange={handleChange}
-    />
-    
-    <input
-      type="text"
-      value={newForm.name}
-      name="name"
-      placeholder="name"
-      onChange={handleChange}
-    />
+  const form = (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={newForm.department}
+        name="department"
+        placeholder="department"
+        onChange={handleChange}
+      />
+      
+      <input
+        type="text"
+        value={newForm.name}
+        name="name"
+        placeholder="name"
+        onChange={handleChange}
+      />
 
-    <input type="submit" value="Add Product" />
-  </form>
-);
+      <input type="submit" value="Add Product" />
+    </form>
+  )
 
 
 if (props.product !== null) {
@@ -69,20 +68,20 @@ if (props.product !== null) {
               </Link>
               <img src={p.images[0].sizes[0].url} alt={"thing"}/>
               <h3>${p.items[0].price.regular}</h3>
-              <button>Add to Cart</button>
+              <button onClick={props.getCart}>Add to Cart</button>
             </div>
           </div>
-        );
+        )
       })}
     </section>
-  );
+  )
 } else {
   return (
     <section>
       {form}
       <h1>Loading...</h1>
     </section>
-  );
+  )
 }
-};
-export default Index;
+}
+export default Index

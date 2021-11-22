@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-//import icons from react-icons for hamburger menu and close
+//import react-icons for hamburger menu and close
 import { BiMenu } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -8,40 +8,18 @@ const Header = (props) => {
     <header className="header">
       <div className="header navBar content">
         <Link to="/">
-          <h2 className="header content logo">Grocery App</h2>
+          <h2 className="header content logo">
+            Grocery App
+          </h2>
         </Link>
 
         <nav className="header content nav">
           <ul>
-            <li>
-              <a href="/products">
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a href="/signup">
-                Signup
-              </a>
-            </li>
-
-            <li>
-              <a href="/login">
-                Login
-              </a>
-            </li>
-
-            <li>
-              <a href="/cart">
-                Cart
-              </a>
-            </li>
-
-            <li>
-              <a href="/">
-                Log out
-              </a>
-            </li>
+            <li><Link to="/shop">Home</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+            <li><Link to="/">Log out</Link></li>
           </ul>
         </nav>
         <div className="header toggle content">
