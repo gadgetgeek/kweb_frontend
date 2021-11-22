@@ -9,7 +9,7 @@ This is the frontend for the Grocery Store App, utilizing API from the [MongoDB-
 - [Wensy DeSousa](https://github.com/wensyd)
 
 ## Technologies Used
-- HTML5
+- HTML5 sometimes
 - CSS
 - React JS
 - Netlify
