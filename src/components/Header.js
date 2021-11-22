@@ -1,53 +1,56 @@
-import { Link } from "react-router-dom";
-//import icons from react-icons for hamburger menu and close
-import { BiMenu } from "react-icons/bi";
-import { AiOutlineClose } from "react-icons/ai";
+import { React, useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 
-const Header = (props) => {
+
+
+const Header = ({toggleBurgerMenu}) => {
+
+
   return (
     <header className="header">
-      <div className="header navBar content">
-        <Link to="/">
-          <h2 className="header content logo">Grocery App</h2>
-        </Link>
+      <nav className="nav">
+        <ul className="nav__list">
+          <Link className="nav__logo" to="/">
+            Grocery App
+          </Link>
 
-        <nav className="header content nav">
-          <ul>
-            <li>
-              <a href="/products">
-                Home
-              </a>
-            </li>
+          <li className="nav__list__item">
+            <NavLink className="nav__link" to="/products">
+              Home
+            </NavLink>
+          </li>
 
-            <li>
-              <a href="/signup">
-                Signup
-              </a>
-            </li>
+          <li className="nav__list__item">
+            <NavLink className="nav__link" to="/signup">
+              Signup
+            </NavLink>
+          </li>
 
-            <li>
-              <a href="/login">
-                Login
-              </a>
-            </li>
+          <li className="nav__list__item">
+            <NavLink className="nav__link" to="/login">
+              Login
+            </NavLink>
+          </li>
 
-            <li>
-              <a href="/cart">
-                Cart
-              </a>
-            </li>
+          <li className="nav__list__item">
+            <NavLink className="nav__link" to="/cart">
+              Cart
+            </NavLink>
+          </li>
 
-            <li>
-              <a href="/">
-                Log out
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="header toggle content">
-          <BiMenu />
-        </div>
-      </div>
+          <li className="nav__list__item">
+            <NavLink className="nav__link" to="/">
+              Log out
+            </NavLink>
+          </li>
+
+          <div className="nav__toggle__button" onClick={toggleBurgerMenu}>
+            <div className="nav__toggle__button"></div>
+            <div className="nav__toggle__button"></div>
+            <div className="nav__toggle__button"></div>
+          </div>
+        </ul>
+      </nav>
     </header>
   );
 };
