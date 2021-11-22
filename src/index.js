@@ -6,13 +6,16 @@ import "./styles.scss";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { RecoilRoot} from "recoil"
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Router>,
+    <RecoilRoot>
+      <Router>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Router>
+    </RecoilRoot>,
   document.getElementById("root")
 );
 
