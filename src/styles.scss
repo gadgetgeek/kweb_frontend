@@ -13,8 +13,6 @@ $headerHeight: 100px;
 $borderRadius: 12px;
 
 
-
-
 // ---------------------
 // Mixins
 // ---------------------
@@ -104,7 +102,7 @@ $borderRadius: 12px;
   }
   transition: 0.3s ease all;
 
-  &__content {
+  & .content {
     overflow: hidden;
     color: $contrastcolor;
     margin: 0 auto;

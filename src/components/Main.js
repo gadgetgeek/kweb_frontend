@@ -9,7 +9,7 @@ import Landing from "../pages/Landing"
 
 const Main = (props) => {
   // your deployed heroku URL
-  const backend = "http://localhost:3001"
+  const backend = "https://kweb-ga.herokuapp.com/"
 
   const [auth, setAuth] = useState(null)
   console.log(auth)
