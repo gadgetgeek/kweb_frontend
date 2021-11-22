@@ -12,10 +12,7 @@ function App() {
   console.log(auth)
 
   const getAuth = (user) => {
-    const token = [
-      {id: user._id},
-      {loggedIn: true}
-    ]
+    const token = {id: user._id}
 
     const seedData = async () => {
       // make the get request to our API

@@ -54,12 +54,16 @@ const Index = (props) => {
     </form>
   )
 
-
 if (props.product !== null) {
   return (
     <section>
       {form}
       {props.product.map((p) => {
+        const prepCart = () => {
+          if (props.cart === null) {props.getCart()}
+        }
+        const add = () => {props.addToCart(p.productId)}
+        p.addToCart = props.getCart
         return (
           <div key={p._id} className="product">
             <div className="productcontent">
@@ -68,7 +72,7 @@ if (props.product !== null) {
               </Link>
               <img src={p.images[0].sizes[0].url} alt={"thing"}/>
               <h3>${p.items[0].price.regular}</h3>
-              <button onClick={props.getCart}>Add to Cart</button>
+              <button onMouseOver={prepCart} onClick={add}>Add to Cart</button>
             </div>
           </div>
         )
