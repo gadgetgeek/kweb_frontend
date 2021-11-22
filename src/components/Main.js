@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login"
@@ -6,45 +5,21 @@ import Shop from "../components/Shop"
 import Landing from "../pages/Landing"
 
 const Main = (props) => {
-  // your deployed heroku URL
-  const backend = "https://kweb-ga.herokuapp.com/"
-
-  const [auth, setAuth] = useState(null)
-  console.log(auth)
-
-  const getAuth = (user) => {
-    const token = [
-      {id: user._id},
-      {loggedIn: true}
-    ]
-
-    const seedData = async () => {
-      // make the get request to our API
-      await fetch(URL+'/seed', {
-          method: "get",
-          headers: {"Content-Type": "application/json"},
-      })
-    }
-
-    seedData()
-    
-    setAuth(token)
-  }
-
+  
   return (
     <main>
       <Routes>
         <Route path="/" element={
-          <Landing auth={auth}/>
+          <Landing auth={props.auth}/>
         } />
         <Route path="/signup" element={
-          <Signup backend={backend} auth={auth}/>
+          <Signup backend={props.backend} auth={props.auth}/>
         }/>
         <Route path="/login" element={
-          <Login backend={backend} auth={auth} getAuth={getAuth}/>
+          <Login backend={props.backend} auth={props.auth} getAuth={props.getAuth}/>
         }/>
         <Route path="/shop/*" element={
-          <Shop backend={backend} auth={auth}/>
+          <Shop backend={props.backend} auth={props.auth}/>
         } />
       </ Routes>
     </main>
