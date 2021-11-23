@@ -19,13 +19,13 @@ const BurgerMenu = ({
           </Link>
 
           <li className="burgermenu__list__item" onClick={closeBurgerMenu}>
-            <NavLink className="burgermenu__link" to="/products">
+            <NavLink className="burgermenu__link" to="/">
               Home
             </NavLink>
           </li>
 
           <li className="burgermenu__list__item" onClick={closeBurgerMenu}>
-            <NavLink className="burgermenu__link" to="/">
+            <NavLink className="burgermenu__link" to="/products">
               Create New
             </NavLink>
           </li>
