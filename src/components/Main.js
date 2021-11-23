@@ -67,7 +67,7 @@ const deleteProduct = async (id) => {
   return (
     <main>
       <Routes>
-        <Route path="/" element={
+        <Route path="/products" element={
         <Index product={product} createProduct={createProduct}/>
         } />
         <Route path="/products/:id" element={

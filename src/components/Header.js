@@ -14,13 +14,13 @@ const Header = ({toggleBurgerMenu}) => {
           </Link>
 
           <li className="nav__list__item">
-            <NavLink className="nav__link" to="/products">
+            <NavLink className="nav__link" to="/">
               Home
             </NavLink>
           </li>
 
           <li className="nav__list__item">
-            <NavLink className="nav__link" to="/">
+            <NavLink className="nav__link" to="/products">
               Create New
             </NavLink>
           </li>
