@@ -1,6 +1,6 @@
-# Bookmark Frontend
+# Grocery Store App
 
-This is the frontend for the Grocery Store App, utilizing API from the [MongoDB-Heroku backend.]()
+This is the frontend for the Grocery Store App, utilizing API from the [MongoDB-Heroku backend.](https://github.com/gadgetgeek/kweb_backend)
 
 ## Contributors
 - [Brian Anderson](https://github.com/gadgetgeek) (team lead and repo owner)
@@ -10,7 +10,7 @@ This is the frontend for the Grocery Store App, utilizing API from the [MongoDB-
 
 ## Technologies Used
 - HTML5
-- CSS
+- SASS
 - React JS
 - Netlify
 
@@ -19,37 +19,39 @@ This is the frontend for the Grocery Store App, utilizing API from the [MongoDB-
 | Route | URL | Description |
 | ----- | --- | ----------- |
 | Home | `/` | Homepage |
-| Login | `/login` | User authentication |
-| Signup | `/signup` | User account creation |
-| Index | `/shop` | GET request, returns all products |
-| Create | `/shop` | POST request, uses request body to add product to user cart |
-| Index | `/cart` | GET request, returns products in user cart |
-| Update | `/cart/:id` | PUT request, updates quantity of product in cart |
-| Destroy | `/cart/:id` | DELETE request, removes specified product from cart |
-| Show | `/shop/:id` | GET request, shows the product specified |
+| Index | `/products` | GET returns all products, POST creates a new product |
+| Show | `/products/:id` | PUT updates a product, DELETE destroys a product |
 
 ## Components
-- Header - hosts the title banner and store navigation (sandwhich menu?)
+- HeaderNav - hosts the title banner responsive logic
+- Header - shows tabs for store navigation
+- BurgerMenu - pop-up navigation pane for mobile
 - Main - holds CRUD functions and routes
 
 ## Pages
-- Shop - search bar for products, carousel through department items, modal for 
-- Cart - shows pre-filled form of specified bookmark for editing
+- Index - search bar for products, carousel through department items, modal for 
+- Show - shows pre-filled form of specified bookmark for editing
 
 ## Tree
 ```
 App
- |_____ Header
+ |_____ HeaderNav
+          |______ Header / BurgerMenu
  |_____ Main
-          |______ Login / Signup
-          |______ Shop / Cart
+          |______ Index / Show
 ```
 
 ## User Stories
-- As a user, I can see a list of all my bookmarks when I visit the page.
-- As a user, I can click on one of my bookmarks and have it take me to the linked website.
-- As a user, I can create a new bookmark and see that it immediately loads on the page so that I know I successfully added a bookmark, and the form becomes clear for a new entry.
-- As a user, I can update a bookmark in case I made a typo or the URL changed.
-- As a user, I can delete a bookmark so I can keep my list relevant.
-- As a user, I can delete all bookmarks so I can make a new list entirely.
-- As a user, I can click to go to the site of a random bookmark.
+- As a user, I can see a list of all my products when I visit the page.
+- As a user, I can click on one of my products and have it take me to its individual page.
+- As a user, I can create a new product, see it immediately, and the form becomes clear for a new entry.
+- As a user, I can update a product in case I made a typo or want to change an image.
+- As a user, I can delete a product so I can keep my list relevant.
+
+## Development Challenges
+
+### Kroger API Requests and OAuth 2.0
+Our initial plan was to allow the user to do organic API requests from [Kroger](https://developer.kroger.com/documentation/public/getting-started/quick-start) in order to render a list of products. The Kroger API makes use of OAuth 2.0 - which is a cool way to authorize inidivudal users and have their info stored on Kroger's end - but it ended up being unfeasible. We got the API requests to work via Thunderclient, but trying to turn its code into Javascript proved to be a headache due to CORS.
+
+### Git Collaboration
+The biggest lessons learned were the complications that arose from collaborating across Git. Dividing up the work seems like a massive productivity hack, but having to put code from different sources together, and pushing and pulling suggested changes across the net led to quite a few merge conflicts and a lot of thrown out code. The higher up the design hierarchy a change is, the more things it breaks.
