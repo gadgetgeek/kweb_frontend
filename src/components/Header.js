@@ -5,7 +5,6 @@ import { NavLink, Link } from "react-router-dom";
 
 const Header = ({toggleBurgerMenu}) => {
 
-
   return (
     <header className="header">
       <nav className="nav">
