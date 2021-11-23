@@ -10,7 +10,9 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <Router>
     <React.StrictMode>
+      
       <App />
+      <h2>Welcome to the Grocery List App!</h2>
     </React.StrictMode>
   </Router>,
   document.getElementById("root")
